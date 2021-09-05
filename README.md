@@ -1,3 +1,15 @@
+# Transport Demo
+
+Vahil forgot to attach the assignment data, so I've gone ahead and followed the instructions without it
+
+A login Page with username, password and a login button
+After login navigate to “Trips” page where we try to find a trip within the available train timetable
+Choose “Date” from a Date Picker/ Calendar
+Choose “From” and “To” stations from respective drop down lists
+Upon choosing the “To” station, the “Timetable” with all the available departure times for the selected travel should be displayed
+By changing any of “From”, “To” or “Date”, the timetable should be updated dynamically.
+After selecting the departure time from the timetable, clicking on “Apply” button should run some local application on your computer (anything is works, Open a calculator, a notepad, etc.)
+
 # Transportdemo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.

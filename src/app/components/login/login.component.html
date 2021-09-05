@@ -1,0 +1,29 @@
+<h1>Please login:</h1>
+<div class="form-group login-container bg-light">
+    <form [formGroup]="loginForm" [ngClass]="invalidForm ? 'was-validated' : 'needs-validation'" novalidate>
+        <div class="login-details" *ngIf="!checkingLogin">
+            <div class="login-error text-danger text-bold" *ngIf="incorrectLogin">
+                Incorrect login!
+            </div>
+            <div class="username-field" [ngClass]="{'login-failed' : incorrectLogin}">
+                <label for="username"><span class="text-danger">*</span> Username:</label>
+                <input type="text" id="username" class="form-control" formControlName="username" required/>
+                <small class="text-danger" *ngIf="username.touched && username.errors?.required || invalidForm && username.errors?.required">Please enter a username</small>
+            </div>
+            <div class="password-field">
+                <label for="password"><span class="text-danger">*</span> Password:</label>
+                <input type="password" id="password" class="form-control" formControlName="password" required/>
+                <small class="text-danger" *ngIf="password.touched && password.errors?.required || invalidForm && password.errors?.required">Please enter a password</small>
+            </div>
+            <div class="submit-field">
+                <button type="submit" (click)="onSubmit()" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+
+        <div class="checking-login" *ngIf="checkingLogin">
+            <div class="login-check-title">Checking login...</div>
+            <div class="spinner-border" role="status"></div>
+        </div>
+        
+    </form>
+  </div>

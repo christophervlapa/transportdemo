@@ -1,0 +1,12 @@
+.trips-container {
+    margin-top: 15px;
+    border: 2px solid #DDDDDD;
+    border-radius: 5px;
+
+    .trip-origin-destination,
+    .date-container {
+        label {
+            padding-bottom: 10px;
+        }
+    }
+}

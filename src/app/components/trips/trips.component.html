@@ -1,0 +1,40 @@
+<div class="trips-container container">
+    <div class="row">
+        <div class="trips-title col-12">
+            <h1>Trip planner</h1>
+        </div>
+    </div>
+    
+    <form class="form-inline" [formGroup]="tripsForm">
+        <div class="row trip-date">
+            <div class="date-container col-4">
+                <div class="form-group">
+                    <label for="trip-date">Choose date of travel:</label>
+                    <div class="input-group">
+                    <input class="form-control" id="trip-date" placeholder="yyyy-mm-dd"
+                            name="dp" formControlName="tripDate" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="bi bi-calendar3"></i></button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 row d-flex justify-content-between trip-origin-destination">
+            <div class="trip-from-container col-4">
+                <label for="tripFrom">Select your trip start:</label>
+                <select class="form-select" formControlName="tripFrom" id="tripFrom" aria-label="Select trip starting point">
+                    <option value="" selected>From:</option>
+                   <option *ngFor="let station of stationsData?.stops" value="{{station.efa_id}}">{{station.name}}</option>
+                </select>
+            </div>
+            <div class="trip-to-container col-4">
+                <label for="tripTo">Select your destination:</label>
+                <select class="form-select" formControlName="tripTo" id="tripTo" aria-label="Select trip destination">
+                    <option value="" selected>To</option>
+                    <option *ngFor="let station of stationsData?.stops" value="{{station.efa_id}}">{{station.name}}</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
