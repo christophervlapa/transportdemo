@@ -1,14 +1,18 @@
 # Transport Demo
 
-Vahil forgot to attach the assignment data, so I've gone ahead and followed the instructions without it
+I've used the TransportNSW opendata API to pull in journeys, there was a LOT of data to look at and understand in a very short time, so please forgive any misunderstandings of data properties.
 
-A login Page with username, password and a login button
-After login navigate to “Trips” page where we try to find a trip within the available train timetable
-Choose “Date” from a Date Picker/ Calendar
-Choose “From” and “To” stations from respective drop down lists
-Upon choosing the “To” station, the “Timetable” with all the available departure times for the selected travel should be displayed
-By changing any of “From”, “To” or “Date”, the timetable should be updated dynamically.
-After selecting the departure time from the timetable, clicking on “Apply” button should run some local application on your computer (anything is works, Open a calculator, a notepad, etc.)
+I wanted to open an executable on my Macbook from the browser window but could not. My searches gradually left web development and became security research on OWASP etc as this is malware behaviour and _strongly_ discouraged.
+
+Because of limitations of the transportNSW opendata API and stackblitz, you need to run this on local.To run this on localhost, clone the repo and then run from chrome with the flags:
+
+MAC
+open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials
+
+PC
+chromium-browser --disable-web-security --user-data-dir="[some directory here]"
+
+Then ron `ng serve` as normal.
 
 # Transportdemo
 
