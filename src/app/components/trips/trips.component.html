@@ -37,4 +37,19 @@
             </div>
         </div>
     </form>
+    <div class="mt-4 row" *ngIf="!showDepartureTimes && !noTripsFound">
+        <h2>No journey selected...</h2>
+    </div>
+    <div class="mt-4 row" *ngIf="!showDepartureTimes && noTripsFound">
+        <h2>Whoops! No departure times were found for that journey!</h2>
+        <p>Please select another trip to enjoy.</p>
+    </div>
+    <div class="mt-4 row d-flex justify-content-between trip-origin-destination" *ngIf="showDepartureTimes ">
+       <div class="col-12">
+            <h2>Departure times on {{ formattedDepartureDate }}:</h2>
+            <ul>
+                <li *ngFor="let departureTime of departureTimes">{{ departureTime }}</li>
+            </ul>
+        </div>
+    </div>
 </div>
