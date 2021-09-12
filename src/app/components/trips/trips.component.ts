@@ -59,7 +59,7 @@ export class TripsComponent implements OnInit {
 
         // Format the trip date for humans 
         this.formattedDepartureDate = new Date(
-          `${('0' + this.tripDate.value.month).slice(-2)}-${('0' + this.tripDate.value.day).slice(-2)}-${this.tripDate.value.year}`
+          `${this.tripDate.value.year}-${('0' + this.tripDate.value.month).slice(-2)}-${('0' + this.tripDate.value.day).slice(-2)}`
         ).toLocaleDateString('en-GB',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
         // call the transportinfo API, and return our trip data
@@ -72,6 +72,7 @@ export class TripsComponent implements OnInit {
             // loop though the journeys
             data.journeys.forEach((journey: any) => {
               // Format the departure time like 08:30 am
+              console.log(journey.legs[0].origin.departureTimeEstimated);
               let formattedDepartureTime = new Date(journey.legs[0].origin.departureTimeEstimated).toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', hour12: true}).toLocaleLowerCase();
               // Add the departure times array IF it's not in there
               console.log(journey.legs[0].origin.departureTimeEstimated);
